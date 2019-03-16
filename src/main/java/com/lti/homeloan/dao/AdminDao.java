@@ -6,9 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.homeloan.dto.AdminLoginDTO;
 import com.lti.homeloan.entity.AdminEntity;
@@ -56,6 +56,12 @@ public class AdminDao {
 	@Transactional
 	public void verifyApplication(int applicationNo) {
 		Query query = entityManager.createQuery("update ApplicationEntity set isVerified = true where applicationNo = :applicationNumber");
+		query.setParameter("applicationNumber", applicationNo).executeUpdate();
+	}
+	
+	@Transactional
+	public void approveApplication(int applicationNo) {
+		Query query = entityManager.createQuery("update ApplicationEntity set isApproved = true where applicationNo = :applicationNumber");
 		query.setParameter("applicationNumber", applicationNo).executeUpdate();
 	}
 }

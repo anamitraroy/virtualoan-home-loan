@@ -37,9 +37,8 @@ public class AdminTest {
 		
 		List<LoanEntity> loans = dao.fetchApprovedLoans();
 		for (LoanEntity loanEntity : loans) {
-			System.out.print(loanEntity.getApplicationNo() + "\t");
-			System.out.print(loanEntity.getApplicantUserName() + "\t");
-			System.out.println(loanEntity.getAmount() + "\t");
+			System.out.print(loanEntity.getLoanAmount() + "\t");
+			System.out.print(loanEntity.getDuration() + "\t");
 		}
 	}
 	
@@ -72,5 +71,12 @@ public class AdminTest {
 		System.out.println("Is Sent? "+ application.getIsSent());
 		System.out.println("Is Verified? "+ application.getIsVerified());
 		System.out.println("Is Approved? "+ application.getIsApproved());
+	}
+	
+	@Test
+	public void adminVerifyApplication() {
+		ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/spring-config.xml");
+		AdminDao dao = ctx.getBean(AdminDao.class);
+		dao.verifyApplication(100);
 	}
 }

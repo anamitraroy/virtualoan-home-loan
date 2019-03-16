@@ -15,12 +15,12 @@
 	Requested Loan Amount: ${ currentApplication.requestedLoanAmount } <br/>
 	Duration of Loan: ${ currentApplication.duration } months <br/>
 	<c:if test = "${ currentApplication.isVerified == false }">
-		<a href="<c:url value="verifyCurrentApplication">
+		<a href="<c:url value="controller/verifyApplication">
 											<c:param name="applicationNo" value="${currentApplication.applicationNo }" />
 																</c:url>">Verify Loan</a><br/>
 	</c:if>
 	<c:if test = "${ currentApplication.isVerified == true && currentApplication.isApproved == false }">
-		<a href="<c:url value="controller/approveCurrentApplication">
+		<a href="<c:url value="controller/approveApplication">
 											<c:param name="applicationNo" value="${currentApplication.applicationNo }" />
 																</c:url>">Approve Loan</a><br/>
 	</c:if>

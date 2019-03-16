@@ -1,43 +1,35 @@
 package com.lti.homeloan.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
-@Table(name="test_loan")
-public class LoanEntity {
-	@Id
-	private int id;
-	@Column(name="application_number")
-	private int applicationNo;
-	@Column(name="applicant_username")
-	private String applicantUserName;
-	private double amount;
+@Table(name="TBL_HOMELOAN_LOANDETAILS")
+public class LoanEntity { 
 	
-	public int getId() {
-		return id;
+	@Id
+	@GenericGenerator(name="inc",strategy="increment")
+	@GeneratedValue(generator="inc") 
+	private int id;
+	
+	private int duration;
+	private double loanAmount;
+	
+	public int getDuration() {
+		return duration;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
-	public int getApplicationNo() {
-		return applicationNo;
+	public double getLoanAmount() {
+		return loanAmount;
 	}
-	public void setApplicationNo(int applicationNo) {
-		this.applicationNo = applicationNo;
+	public void setLoanAmount(double loanAmount) {
+		this.loanAmount = loanAmount;
 	}
-	public String getApplicantUserName() {
-		return applicantUserName;
-	}
-	public void setApplicantUserName(String applicantUserName) {
-		this.applicantUserName = applicantUserName;
-	}
-	public double getAmount() {
-		return amount;
-	}
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
+
 }

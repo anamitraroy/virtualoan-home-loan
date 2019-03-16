@@ -54,9 +54,15 @@ public class AdminController {
 		return "/adminViewSingleApplication.jsp";
 	}
 	
-	@RequestMapping(path="/verifyCurrentApplication", method=RequestMethod.GET)
-	public String verifyCurrentApplication(@RequestParam("applicationNo") int applicationNumber) {
+	@RequestMapping(path="/verifyApplication", method=RequestMethod.GET)
+	public String verifyApplication(@RequestParam("applicationNo") int applicationNumber) {
 		adminService.verifyApplication(applicationNumber);
+		return "/adminDashboard.jsp";
+	}
+	
+	@RequestMapping(path="/approveApplication", method=RequestMethod.GET)
+	public String approveApplication(@RequestParam("applicationNo") int applicationNumber) {
+		adminService.approveApplication(applicationNumber);
 		return "/adminDashboard.jsp";
 	}
 	

@@ -2,8 +2,6 @@ package com.lti.homeloan.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -44,5 +42,9 @@ public class AdminService {
 	
 	public void verifyApplication(int applicationNo) {
 		adminDao.verifyApplication(applicationNo);
+	}
+	
+	public void approveApplication(int applicationNo) {
+		adminDao.approveApplication(applicationNo);
 	}
 }

@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,6 +24,7 @@ public class ApplicationEntity {
 	private int applicationNo;
 	
 	@ManyToOne
+	@JoinColumn(name="user_id")
 	private UserEntity user;
 	
 	@Column(name="maximum_loan_amount")

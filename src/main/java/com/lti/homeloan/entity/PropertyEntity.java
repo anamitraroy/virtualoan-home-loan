@@ -1,8 +1,10 @@
 package com.lti.homeloan.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -19,6 +21,10 @@ public class PropertyEntity {
 	private String propertyName;
 	private String propertyLocation;
 	private double estimatedAmount;
+	
+	@ManyToOne
+	@Column(name="user_id")
+	private UserEntity user;
 	
 	public String getPropertyName() {
 		return propertyName;

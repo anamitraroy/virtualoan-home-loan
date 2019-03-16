@@ -1,5 +1,6 @@
 package com.lti.homeloan.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,11 +16,17 @@ public class UserIncomeDetailsEntity {
 	@GenericGenerator(name="inc",strategy="increment")
 	@GeneratedValue(generator="inc") 
 	private int id;
+	
 	@OneToOne
+	@Column(name="user_id")
 	private UserEntity user;
+	
 	private double monthlyIncome;
+	
 	private String employmentType;
+	
 	private String organisation;
+	
 	private int retirementAge;
 	
 	public int getId() {

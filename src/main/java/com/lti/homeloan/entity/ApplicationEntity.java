@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 
@@ -16,10 +17,12 @@ import org.hibernate.annotations.Type;
 public class ApplicationEntity {
 	
 	@Id
-	@GeneratedValue
+	@GenericGenerator(name="inc",strategy="increment")
+	@GeneratedValue(generator="inc")
 	@Column(name="application_no")
 	private int applicationNo;
 	@ManyToOne
+	@Column(name="user_id")
 	private UserEntity user;
 	@Column(name="maximum_loan_amount")
 	private double maximumLoanAmount;

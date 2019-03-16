@@ -5,10 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "TBL_HOMELOAN_LOGIN")
 public class LoginEntity {
 	@Id
+	@GenericGenerator(name="inc",strategy="increment")
 	@GeneratedValue
 	int id;
 	private String userName;

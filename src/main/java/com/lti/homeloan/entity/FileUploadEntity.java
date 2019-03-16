@@ -11,12 +11,12 @@ import javax.persistence.Table;
 public class FileUploadEntity {
 	
 	@Id
-	@Column(name="userId")
+	@Column(name="user_id")
 	private UserEntity user;
 	private String aadharNo;
 	private String voterId;
 	private String salarySlip;
-	private String loa;
+	private String letterOfAgreement;
 	private String noc;
 	private String agreement;
 	
@@ -39,11 +39,11 @@ public class FileUploadEntity {
 	public void setSalarySlip(String salarySlip) {
 		this.salarySlip = salarySlip;
 	}
-	public String getLoa() {
-		return loa;
+	public String getLetterOfAgreement() {
+		return letterOfAgreement;
 	}
-	public void setLoa(String loa) {
-		this.loa = loa;
+	public void setLetterOfAgreement(String letterOfAgreement) {
+		this.letterOfAgreement = letterOfAgreement;
 	}
 	public String getNoc() {
 		return noc;

@@ -63,18 +63,18 @@ public class UserController {
 		int userId = user.getId();
 		
 		//TODO : rename the file since two users can upload file of same name
-		File targetDir1 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getAadharNo().getOriginalFilename()); 
+		File targetDir1 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getAadharCard().getOriginalFilename()); 
 		File targetDir2 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getVoterId().getOriginalFilename()); 
 		File targetDir3 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getSalarySlip().getOriginalFilename()); 
-		File targetDir4 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getLoa().getOriginalFilename()); 
+		File targetDir4 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getLetterOfAgreement().getOriginalFilename()); 
 		File targetDir5 = new File("d:/uploads/" + userId + "-" +  fileUploadDTO.getNoc().getOriginalFilename()); 
 		File targetDir6 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getAgreement().getOriginalFilename()); 
 		
 		try {
-			fileUploadDTO.getAadharNo().transferTo(targetDir1);
+			fileUploadDTO.getAadharCard().transferTo(targetDir1);
 			fileUploadDTO.getVoterId().transferTo(targetDir2);
 			fileUploadDTO.getSalarySlip().transferTo(targetDir3);
-			fileUploadDTO.getLoa().transferTo(targetDir4);
+			fileUploadDTO.getLetterOfAgreement().transferTo(targetDir4);
 			fileUploadDTO.getNoc().transferTo(targetDir5);
 			fileUploadDTO.getAgreement().transferTo(targetDir6);
 			

@@ -21,9 +21,11 @@ public class LoanEntity {
 	private int id;
 	
 	@OneToOne(mappedBy="applicationNo",cascade=CascadeType.ALL)
+	@Column(name="application_no")
 	private ApplicationEntity application;
 	
 	@ManyToOne
+	@Column(name="user_id")
 	private UserEntity user;
 	
 	private int duration;

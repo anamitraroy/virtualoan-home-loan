@@ -9,10 +9,10 @@ import com.lti.homeloan.entity.UserEntity;
 public class FileUploadDTO {
 	
 	private UserEntity user;
-	private MultipartFile aadharNo;
+	private MultipartFile aadharCard;
 	private MultipartFile voterId;
 	private MultipartFile salarySlip;
-	private MultipartFile loa;
+	private MultipartFile letterOfAgreement;
 	private MultipartFile noc;
 	private MultipartFile agreement;
 	
@@ -36,11 +36,11 @@ public class FileUploadDTO {
 	public void setSalarySlip(MultipartFile salarySlip) {
 		this.salarySlip = salarySlip;
 	}
-	public MultipartFile getLoa() {
-		return loa;
+	public MultipartFile getLetterOfAgreement() {
+		return letterOfAgreement;
 	}
-	public void setLoa(MultipartFile loa) {
-		this.loa = loa;
+	public void setLetterOfAgreement(MultipartFile letterOfAgreement) {
+		this.letterOfAgreement = letterOfAgreement;
 	}
 	public MultipartFile getNoc() {
 		return noc;
@@ -54,11 +54,11 @@ public class FileUploadDTO {
 	public void setAgreement(MultipartFile agreement) {
 		this.agreement = agreement;
 	}
-	public MultipartFile getAadharNo() {
-		return aadharNo;
+	public MultipartFile getAadharCard() {
+		return aadharCard;
 	}
-	public void setAadharNo(MultipartFile aadharNo) {
-		this.aadharNo = aadharNo;
+	public void setAadharCard(MultipartFile aadharCard) {
+		this.aadharCard = aadharCard;
 	}
 
 }

@@ -103,10 +103,10 @@ public class UserService {
 		FileUploadEntity fileUploadEntity=new FileUploadEntity();
 		
 		fileUploadEntity.setUser(user);
-		fileUploadEntity.setAadharNo(fileUploadDTO.getAadharNo().getOriginalFilename());
+		fileUploadEntity.setAadharNo(fileUploadDTO.getAadharCard().getOriginalFilename());
 		fileUploadEntity.setVoterId(fileUploadDTO.getVoterId().getOriginalFilename());
 		fileUploadEntity.setSalarySlip(fileUploadDTO.getSalarySlip().getOriginalFilename());
-		fileUploadEntity.setLoa(fileUploadDTO.getLoa().getOriginalFilename());
+		fileUploadEntity.setLetterOfAgreement(fileUploadDTO.getLetterOfAgreement().getOriginalFilename());
 		fileUploadEntity.setNoc(fileUploadDTO.getNoc().getOriginalFilename());
 		fileUploadEntity.setAgreement(fileUploadDTO.getAgreement().getOriginalFilename());
 		

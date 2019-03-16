@@ -3,9 +3,12 @@ package com.lti.homeloan.dto;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.lti.homeloan.entity.UserEntity;
+
 
 public class FileUploadDTO {
-
+	
+	private UserEntity user;
 	private MultipartFile aadharNo;
 	private MultipartFile voterId;
 	private MultipartFile salarySlip;
@@ -13,6 +16,14 @@ public class FileUploadDTO {
 	private MultipartFile noc;
 	private MultipartFile agreement;
 	
+	
+	
+	public UserEntity getUser() {
+		return user;
+	}
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
 	public MultipartFile getVoterId() {
 		return voterId;
 	}

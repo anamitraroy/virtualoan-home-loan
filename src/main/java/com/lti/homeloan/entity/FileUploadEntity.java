@@ -11,8 +11,8 @@ import javax.persistence.Table;
 public class FileUploadEntity {
 	
 	@Id
-	@Column(name="id")
-	private int userId;
+	@Column(name="userId")
+	private UserEntity user;
 	private String aadharNo;
 	private String voterId;
 	private String salarySlip;
@@ -20,11 +20,12 @@ public class FileUploadEntity {
 	private String noc;
 	private String agreement;
 	
-	public int getUserId() {
-		return userId;
+	
+	public UserEntity getUser() {
+		return user;
 	}
-	public void setId(int userId) {
-		this.userId = userId;
+	public void setUser(UserEntity user) {
+		this.user = user;
 	}
 	public String getVoterId() {
 		return voterId;

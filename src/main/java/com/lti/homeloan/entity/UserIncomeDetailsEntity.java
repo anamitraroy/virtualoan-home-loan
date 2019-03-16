@@ -3,6 +3,7 @@ package com.lti.homeloan.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -14,9 +15,8 @@ public class UserIncomeDetailsEntity {
 	@GenericGenerator(name="inc",strategy="increment")
 	@GeneratedValue(generator="inc") 
 	private int id;
-	private int userId;
-	/*@OneToOne(mappedBy="id")
-	private UserEntity user;*/
+	@OneToOne
+	private UserEntity user;
 	private double monthlyIncome;
 	private String employmentType;
 	private String organisation;
@@ -28,12 +28,12 @@ public class UserIncomeDetailsEntity {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getUserId() {
-		return userId;
+	public UserEntity getUser() {
+		return user;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}	
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
 	public double getMonthlyIncome() {
 		return monthlyIncome;
 	}

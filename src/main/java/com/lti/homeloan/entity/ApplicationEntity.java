@@ -3,6 +3,7 @@ package com.lti.homeloan.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -15,7 +16,7 @@ import org.hibernate.annotations.Type;
 public class ApplicationEntity {
 	
 	@Id
-	private int id;
+	@GeneratedValue
 	@Column(name="application_no")
 	private int applicationNo;
 	@ManyToOne
@@ -27,7 +28,8 @@ public class ApplicationEntity {
 	private double rate;
 	private int duration;
 	@Column(name="property_id")
-	private int propertyId;
+	@ManyToOne
+	private PropertyEntity property;
 	@Column(name="is_sent")
 	@Type(type="yes_no")
 	private boolean isSent;
@@ -41,12 +43,6 @@ public class ApplicationEntity {
 	@Type(type="yes_no")
 	private boolean isRejected;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getApplicationNo() {
 		return applicationNo;
 	}
@@ -78,11 +74,11 @@ public class ApplicationEntity {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-	public int getPropertyId() {
-		return propertyId;
+	public PropertyEntity getProperty() {
+		return property;
 	}
-	public void setPropertyId(int propertyId) {
-		this.propertyId = propertyId;
+	public void setProperty(PropertyEntity property) {
+		this.property = property;
 	}
 	public boolean getIsSent() {
 		return isSent;
@@ -102,10 +98,10 @@ public class ApplicationEntity {
 	public void setIsApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
-	public boolean isRejected() {
+	public boolean getIsRejected() {
 		return isRejected;
 	}
-	public void setRejected(boolean isRejected) {
+	public void setIsRejected(boolean isRejected) {
 		this.isRejected = isRejected;
 	}
 	public UserEntity getUser() {

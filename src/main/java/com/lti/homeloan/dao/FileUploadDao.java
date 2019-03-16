@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import com.lti.homeloan.entity.FileUploadEntity;
+import com.lti.homeloan.entity.UserEntity;
 
 @Repository
 public class FileUploadDao {
@@ -24,7 +25,7 @@ public class FileUploadDao {
 		return entityManager.createQuery("select f from FileUploadEntity f").getResultList();
 	}
 
-	public FileUploadEntity fetch(int userId) {
-		return entityManager.find(FileUploadEntity.class, userId);
+	public FileUploadEntity fetch(UserEntity user) {
+		return entityManager.find(FileUploadEntity.class, user);
 	}
 }

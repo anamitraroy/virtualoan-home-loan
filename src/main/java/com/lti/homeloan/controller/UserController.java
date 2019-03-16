@@ -23,6 +23,7 @@ import com.lti.homeloan.dto.LoanApplicationDTO;
 import com.lti.homeloan.dto.UserDTO;
 import com.lti.homeloan.dto.UserIncomeDetailsDTO;
 import com.lti.homeloan.entity.FileUploadEntity;
+import com.lti.homeloan.entity.PropertyEntity;
 import com.lti.homeloan.entity.UserEntity;
 import com.lti.homeloan.service.UserService;
 
@@ -48,19 +49,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/loanDetails",method=RequestMethod.POST)
-	public String addLoanApplication(LoanApplicationDTO loanApplicationDTO) {
-		userService.addPropertyDetails(loanApplicationDTO);
-		userService.addLoanDetails(loanApplicationDTO);
+	public String addLoanApplication(LoanApplicationDTO loanApplicationDTO, HttpSession session) {
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		PropertyEntity addedProperty = userService.addPropertyDetails(loanApplicationDTO);
+		loanApplicationDTO.setProperty(addedProperty);
+		userService.addApplicationDetails(loanApplicationDTO, user);
 		return"/confirmationLoanDetails.jsp";
 	}
 	
 	@RequestMapping(path="/fileUpload" ,method=RequestMethod.POST)
 	public String fileUpload(FileUploadDTO fileUploadDTO, Map<String, Object> model, HttpSession session) {
-		
-		System.out.println(session.getAttribute("user"));
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		int userId = user.getId();
-		//System.out.println(user.getId());
 		
 		//TODO : rename the file since two users can upload file of same name
 		File targetDir1 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getAadharNo().getOriginalFilename()); 
@@ -84,7 +84,7 @@ public class UserController {
 		}
 		
 		
-		userService.fileUpload(fileUploadDTO, userId);
+		userService.fileUpload(fileUploadDTO, user);
 		
 		model.put("FileUpload", fileUploadDTO);
 		

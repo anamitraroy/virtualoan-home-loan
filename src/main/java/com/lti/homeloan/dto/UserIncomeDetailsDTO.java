@@ -1,21 +1,24 @@
 package com.lti.homeloan.dto;
 
+import javax.persistence.OneToOne;
+
 import com.lti.homeloan.entity.UserEntity;
 
 public class UserIncomeDetailsDTO {
 	
-	private int userId;
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+	private UserEntity user;
 	private double monthlyIncome;
 	private String employmentType;
 	private String organisation;
 	private int retirementAge;
 	
+	
+	public UserEntity getUser() {
+		return user;
+	}
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
 	public double getMonthlyIncome() {
 		return monthlyIncome;
 	}

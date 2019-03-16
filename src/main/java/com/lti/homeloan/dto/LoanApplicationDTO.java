@@ -1,13 +1,22 @@
 package com.lti.homeloan.dto;
 
+import com.lti.homeloan.entity.PropertyEntity;
+
 public class LoanApplicationDTO {
+	private PropertyEntity property;
 	private String propertyName;
 	private String propertyLocation;
 	private double estimatedAmount;
-	
+	private double requestedAmount;
 	private int duration;
-	private double loanAmount;
 	
+	
+	public PropertyEntity getProperty() {
+		return property;
+	}
+	public void setProperty(PropertyEntity property) {
+		this.property = property;
+	}
 	public String getPropertyName() {
 		return propertyName;
 	}
@@ -26,16 +35,18 @@ public class LoanApplicationDTO {
 	public void setEstimatedAmount(double estimatedAmount) {
 		this.estimatedAmount = estimatedAmount;
 	}
+	public double getRequestedAmount() {
+		return requestedAmount;
+	}
+	public void setRequestedAmount(double requestedAmount) {
+		this.requestedAmount = requestedAmount;
+	}
+
 	public int getDuration() {
 		return duration;
 	}
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-	public double getLoanAmount() {
-		return loanAmount;
-	}
-	public void setLoanAmount(double loanAmount) {
-		this.loanAmount = loanAmount;
-	}
+	
 }

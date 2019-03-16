@@ -31,7 +31,6 @@ public class LoanEntity {
 	private double rate;
 	
 	private String dateOfCreation;
-	
 		
 	public String getDateOfCreation() {
 		return dateOfCreation;

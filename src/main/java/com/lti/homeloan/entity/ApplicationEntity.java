@@ -1,8 +1,10 @@
 package com.lti.homeloan.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -16,8 +18,8 @@ public class ApplicationEntity {
 	private int id;
 	@Column(name="application_no")
 	private int applicationNo;
-	@Column(name="user_id")
-	private int userId;
+	@ManyToOne
+	private UserEntity user;
 	@Column(name="maximum_loan_amount")
 	private double maximumLoanAmount;
 	@Column(name="requested_loan_amount")
@@ -35,6 +37,9 @@ public class ApplicationEntity {
 	@Column(name="is_approved")
 	@Type(type="yes_no")
 	private boolean isApproved;
+	@Column(name="is_rejected")
+	@Type(type="yes_no")
+	private boolean isRejected;
 	
 	public int getId() {
 		return id;
@@ -48,12 +53,7 @@ public class ApplicationEntity {
 	public void setApplicationNo(int applicationNo) {
 		this.applicationNo = applicationNo;
 	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+
 	public double getMaximumLoanAmount() {
 		return maximumLoanAmount;
 	}
@@ -101,6 +101,18 @@ public class ApplicationEntity {
 	}
 	public void setIsApproved(boolean isApproved) {
 		this.isApproved = isApproved;
+	}
+	public boolean isRejected() {
+		return isRejected;
+	}
+	public void setRejected(boolean isRejected) {
+		this.isRejected = isRejected;
+	}
+	public UserEntity getUser() {
+		return user;
+	}
+	public void setUser(UserEntity user) {
+		this.user = user;
 	}
 
 }

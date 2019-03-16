@@ -23,7 +23,6 @@ public class UserEntity {
 	private String gender;
 	private String password;
 	private String dob;
-	/*private Date dob;*/
 	private String maritalStatus;
 	private String aadharNo;
 	private String panNo;
@@ -93,12 +92,6 @@ public class UserEntity {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-/*	public Date getDob() {
-		return dob;
-	}
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}*/
 	public String getMaritalStatus() {
 		return maritalStatus;
 	}

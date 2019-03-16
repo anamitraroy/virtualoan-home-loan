@@ -14,8 +14,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class UserIncomeDetailsEntity {
 	
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue(generator="inc") 
+	@GenericGenerator(name="userIncomeSeq",strategy="increment")
+	@GeneratedValue(generator="userIncomeSeq") 
 	private int id;
 	
 	@OneToOne

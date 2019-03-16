@@ -18,8 +18,8 @@ import org.hibernate.annotations.Type;
 public class ApplicationEntity {
 	
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue(generator="inc")
+	@GenericGenerator(name="applicationSeq",strategy="increment")
+	@GeneratedValue(generator="applicationSeq")
 	@Column(name="application_no")
 	private int applicationNo;
 	

@@ -8,11 +8,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name="TBL_HOMELOAN_UPLOADDOCUMENT")
 public class FileUploadEntity {
 	
 	@Id
+	@GenericGenerator(name="fileUploadSeq",strategy="increment")
+	@GeneratedValue(generator="fileUploadSeq")
+	private int id;
+	
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private UserEntity user;

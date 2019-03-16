@@ -12,8 +12,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class UserEntity {
 	
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue(generator="inc") 
+	@GenericGenerator(name="userSeq",strategy="increment")
+	@GeneratedValue(generator="userSeq") 
 	private int id;
 	
 	private String firstName;

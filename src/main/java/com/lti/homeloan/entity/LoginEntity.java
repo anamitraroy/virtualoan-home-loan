@@ -11,8 +11,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "TBL_HOMELOAN_LOGIN")
 public class LoginEntity {
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue
+	@GenericGenerator(name="loginSeq",strategy="increment")
+	@GeneratedValue(generator="loginSeq")
 	int id;
 	private String userName;
 	private String password;

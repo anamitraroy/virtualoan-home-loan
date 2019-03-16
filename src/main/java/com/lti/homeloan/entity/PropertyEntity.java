@@ -15,8 +15,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class PropertyEntity {
 	
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue(generator="inc") 
+	@GenericGenerator(name="propertySeq",strategy="increment")
+	@GeneratedValue(generator="propertySeq") 
 	private int id;
 	
 	private String propertyName;

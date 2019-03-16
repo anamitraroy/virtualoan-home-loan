@@ -19,8 +19,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class LoanEntity { 
 	
 	@Id
-	@GenericGenerator(name="inc",strategy="increment")
-	@GeneratedValue(generator="inc") 
+	@GenericGenerator(name="loanSeq",strategy="increment")
+	@GeneratedValue(generator="loanSeq") 
 	private int id;
 	
 	@OneToOne

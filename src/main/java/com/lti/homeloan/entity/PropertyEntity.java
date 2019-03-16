@@ -23,7 +23,6 @@ public class PropertyEntity {
 	private double estimatedAmount;
 	
 	@ManyToOne
-	@Column(name="user_id")
 	private UserEntity user;
 	
 	public String getPropertyName() {

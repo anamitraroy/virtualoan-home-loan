@@ -17,19 +17,30 @@ public class UserEntity {
 	private int id;
 	
 	private String firstName;
-	private String lastName;
-	private String middleName;
-	private String emailId;
-	private String gender;
-	private String password;
-	private String dob;
-	private String maritalStatus;
-	private String aadharNo;
-	private String panNo;
-	private long mobileNo;
-	private String question;
-	private String answer;
 	
+	private String lastName;
+	
+	private String middleName;
+	
+	private String emailId;
+	
+	private String gender;
+	
+	private String password;
+	
+	private String dob;
+	
+	private String maritalStatus;
+	
+	private String aadharNo;
+	
+	private String panNo;
+	
+	private long mobileNo;
+	
+	private String question;
+	
+	private String answer;
 
 	public String getQuestion() {
 		return question;

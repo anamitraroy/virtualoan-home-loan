@@ -18,7 +18,6 @@ public class UserIncomeDetailsEntity {
 	private int id;
 	
 	@OneToOne
-	@Column(name="user_id")
 	private UserEntity user;
 	
 	private double monthlyIncome;
@@ -65,5 +64,4 @@ public class UserIncomeDetailsEntity {
 	public void setRetirementAge(int retirementAge) {
 		this.retirementAge = retirementAge;
 	}
-	
 }

@@ -1,5 +1,7 @@
 package com.lti.homeloan.entity;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,24 +22,22 @@ public class LoanEntity {
 	@GeneratedValue(generator="inc") 
 	private int id;
 	
-	@OneToOne(mappedBy="applicationNo",cascade=CascadeType.ALL)
-	@Column(name="application_no")
+	@OneToOne
 	private ApplicationEntity application;
 	
 	@ManyToOne
-	@Column(name="user_id")
 	private UserEntity user;
 	
 	private int duration;
 	
 	private double rate;
 	
-	private String dateOfCreation;
+	private Date dateOfCreation;
 		
-	public String getDateOfCreation() {
+	public Date getDateOfCreation() {
 		return dateOfCreation;
 	}
-	public void setDateOfCreation(String dateOfCreation) {
+	public void setDateOfCreation(Date dateOfCreation) {
 		this.dateOfCreation = dateOfCreation;
 	}
 	public ApplicationEntity getApplicationEntity() {

@@ -21,27 +21,35 @@ public class ApplicationEntity {
 	@GeneratedValue(generator="inc")
 	@Column(name="application_no")
 	private int applicationNo;
+	
 	@ManyToOne
-	@Column(name="user_id")
 	private UserEntity user;
+	
 	@Column(name="maximum_loan_amount")
 	private double maximumLoanAmount;
+	
 	@Column(name="requested_loan_amount")
 	private double requestedLoanAmount;
+	
 	private double rate;
+	
 	private int duration;
-	@Column(name="property_id")
+	
 	@ManyToOne
 	private PropertyEntity property;
+	
 	@Column(name="is_sent")
 	@Type(type="yes_no")
 	private boolean isSent;
+	
 	@Column(name="is_verified")
 	@Type(type="yes_no")
 	private boolean isVerified;
+	
 	@Column(name="is_approved")
 	@Type(type="yes_no")
 	private boolean isApproved;
+	
 	@Column(name="is_rejected")
 	@Type(type="yes_no")
 	private boolean isRejected;

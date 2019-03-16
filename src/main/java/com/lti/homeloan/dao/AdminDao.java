@@ -63,5 +63,7 @@ public class AdminDao {
 	public void approveApplication(int applicationNo) {
 		Query query = entityManager.createQuery("update ApplicationEntity set isApproved = true where applicationNo = :applicationNumber");
 		query.setParameter("applicationNumber", applicationNo).executeUpdate();
+		
+		
 	}
 }

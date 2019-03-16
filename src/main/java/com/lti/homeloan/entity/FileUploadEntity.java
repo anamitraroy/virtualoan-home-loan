@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,16 +12,21 @@ import javax.persistence.Table;
 public class FileUploadEntity {
 	
 	@Id
-	@Column(name="user_id")
+	@ManyToOne
 	private UserEntity user;
+	
 	private String aadharNo;
+	
 	private String voterId;
+	
 	private String salarySlip;
+	
 	private String letterOfAgreement;
+	
 	private String noc;
+	
 	private String agreement;
-	
-	
+		
 	public UserEntity getUser() {
 		return user;
 	}

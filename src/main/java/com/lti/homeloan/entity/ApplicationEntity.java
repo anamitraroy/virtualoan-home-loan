@@ -14,7 +14,7 @@ import org.hibernate.annotations.Type;
 
 
 @Entity
-@Table(name="Test_application")
+@Table(name="TBL_application")
 public class ApplicationEntity {
 	
 	@Id

@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+form {
+	margin: 0 auto;
+	width: 300px
+}
+
+input[type=file],input[type=submit] {
+	width: 80%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid grey;
+	border-radius: 4px;
+}
+.registerbtn {
+	background-color: #4CAF50;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid grey;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+.registerbtn:hover {
+	opacity: 1;
+}

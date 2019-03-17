@@ -41,14 +41,14 @@ public class UserController {
 		return "/confirmation.jsp";
 	}
 	
-	@RequestMapping(path="/incomeDetails",method=RequestMethod.POST)
+	@RequestMapping(path="/incomeDetails", method=RequestMethod.POST)
 	public String addIncomeDetails(UserIncomeDetailsDTO userIncomeDetailsDTO,Map<String,Object> model) {
 		userService.addIncomeDetails(userIncomeDetailsDTO);
 		model.put("incomeDetails", userIncomeDetailsDTO);
 		return "redirect:/loanDetails.jsp";
 	}
 	
-	@RequestMapping(path="/loanDetails",method=RequestMethod.POST)
+	@RequestMapping(path="/loanDetails", method=RequestMethod.POST)
 	public String addLoanApplication(LoanApplicationDTO loanApplicationDTO, HttpSession session) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		PropertyEntity addedProperty = userService.addPropertyDetails(loanApplicationDTO);
@@ -57,10 +57,11 @@ public class UserController {
 		return"/confirmationLoanDetails.jsp";
 	}
 	
-	@RequestMapping(path="/fileUpload" ,method=RequestMethod.POST)
+	@RequestMapping(path="/fileUpload", method=RequestMethod.POST)
 	public String fileUpload(FileUploadDTO fileUploadDTO, Map<String, Object> model, HttpSession session) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		int userId = user.getId();
+		System.out.println(userId);
 		
 		//TODO : rename the file since two users can upload file of same name
 		File targetDir1 = new File("d:/uploads/" + userId + "-" + fileUploadDTO.getAadharCard().getOriginalFilename()); 

@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Error</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Error logging in</h1>
+	<h3>
+	Thank you so much for registering with us. 
+You will receive an email shortly on <b>${ registrationDetails.emailId }</b> </h3>
 </body>
 </html>

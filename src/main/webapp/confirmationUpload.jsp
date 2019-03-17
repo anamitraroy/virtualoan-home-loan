@@ -4,20 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<base href="/virtuloan-home-loan/">
 <title>Insert title here</title>
 </head>
 <body>
-<table align="center">
-	<thead>
-		<tr>
-			<th>Admin Dashboard</th>
-		</tr>
-	</thead>
-	<tr>
-		<td><a href="controller/fetchApprovedLoans">See Approved Loans</a></td>
-		<td><a href="controller/fetchApplications">See Pending Applications</a></td>
-	</tr>
-</table>
+	<h3>Document submitted for verification  </h3>
 </body>
 </html>

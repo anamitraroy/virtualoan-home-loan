@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome to VirtuLoan!, ${ sessionScope.user.emailId }</h1>
+	<h1>Welcome to VirtuLoan, ${ sessionScope.user.firstName }!</h1>
 	<a href="documentUpload.jsp">Upload Documents</a>
 </body>
 </html>

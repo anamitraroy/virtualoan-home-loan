@@ -4,24 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<base href="virtuloan-home-loan">
+<base href="/virtuloan-home-loan/">
 <title>Document Upload</title>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<form action="controller/fileUpload" method="post" enctype="multipart/form-data">
+<form action="controller/documentUpload" method="post" enctype="multipart/form-data">
 	<fieldset>
 		<legend align="center">
 			<b><h1>Upload Documents</h1></b>
 		</legend>
 		<label class="fileContainer">
-		<b>Aadhar No :</b><br><input type="file" name="aadharNo" /> <br>
+		<b>Aadhar No :</b><br><input type="file" name="aadharCard" /> <br>
 				
 		<b>Voter Id :</b><br><input type="file" name="voterId" /> <br>
 				
 		<b>Salary Slip :</b><br><input type="file" name="salarySlip" /> <br>
 			
-		<b>LOA :</b><br><input type="file" name="loa" /> <br>
+		<b>LOA :</b><br><input type="file" name="letterOfAgreement" /> <br>
 			
 		<b>NOC from Builder :</b><br><input type="file" name="noc" /> <br>
 			

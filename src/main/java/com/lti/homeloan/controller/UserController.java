@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.lti.homeloan.dao.UserDao;
 import com.lti.homeloan.dto.FileUploadDTO;
 import com.lti.homeloan.dto.LoanApplicationDTO;
 import com.lti.homeloan.dto.UserDTO;
@@ -33,6 +34,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private UserDao userDao;
 
 	@RequestMapping(path="/register", method = RequestMethod.POST)
 	public String register(UserDTO registerDTO,Map<String, Object> model) {
@@ -57,9 +61,9 @@ public class UserController {
 		return"/confirmationLoanDetails.jsp";
 	}
 	
-	@RequestMapping(path="/fileUpload", method=RequestMethod.POST)
+	@RequestMapping(path="/documentUpload", method=RequestMethod.POST)
 	public String fileUpload(FileUploadDTO fileUploadDTO, Map<String, Object> model, HttpSession session) {
-		UserEntity user = (UserEntity) session.getAttribute("user");
+		UserEntity user = (UserEntity) userDao.fetch(UserEntity.class, 2);
 		int userId = user.getId();
 		System.out.println(userId);
 		

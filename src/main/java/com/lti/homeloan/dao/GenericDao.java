@@ -14,4 +14,7 @@ public class GenericDao {
 		return entityManager.merge(obj);
 	}
 	
+	public <T> T fetch(Class<T> requiredClass, Object pk) {
+		return entityManager.find(requiredClass, pk);
+	}
 }

@@ -27,7 +27,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@RequestMapping(path = "/login", method = RequestMethod.POST)
+	@RequestMapping(path ="/login", method = RequestMethod.POST)
 	public String login(LoginDTO loginDTO, Map<String, Object> model, RedirectAttributes redir, HttpSession session) {
 		UserEntity e = loginService.login(loginDTO);
 		if (e != null) {

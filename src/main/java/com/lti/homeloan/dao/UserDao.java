@@ -11,7 +11,7 @@ import com.lti.homeloan.entity.UserEntity;
 import com.lti.homeloan.entity.UserIncomeDetailsEntity;
 
 @Repository
-public class UserDao {
+public class UserDao extends GenericDao {
 
 	@PersistenceContext
 	private EntityManager entityManager;

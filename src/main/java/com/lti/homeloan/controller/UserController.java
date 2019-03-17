@@ -63,7 +63,7 @@ public class UserController {
 	
 	@RequestMapping(path="/documentUpload", method=RequestMethod.POST)
 	public String fileUpload(FileUploadDTO fileUploadDTO, Map<String, Object> model, HttpSession session) {
-		UserEntity user = (UserEntity) userDao.fetch(UserEntity.class, 2);
+		UserEntity user = (UserEntity) session.getAttribute("user");
 		int userId = user.getId();
 		System.out.println(userId);
 		
